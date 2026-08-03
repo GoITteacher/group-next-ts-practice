@@ -1,12 +1,9 @@
-import TestButton from "@/components/TestButton/TestButton";
-import css from "./Page.module.css";
+import css from "./page.module.css";
 
 const Page = () => {
   return (
     <div className={css["page"]}>
-      <h1>Books Page</h1>
-
-      <TestButton />
+      <h4>Оберіть категорію</h4>
     </div>
   );
 };
