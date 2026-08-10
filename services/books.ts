@@ -20,6 +20,7 @@ export const getBooksByCategory = async (category: string) => {
   const res = await axios.get<Book[]>(url, { params });
   return res.data;
 };
+
 export const getBookById = async (id: string) => {
   const baseUrl = "https://books-backend.p.goit.global";
   const endPoint = `/books/${id}`;

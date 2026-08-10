@@ -18,6 +18,15 @@ const Header = () => {
           <li>
             <Link href="/books">Books</Link>
           </li>
+          <li>
+            <Link href="/cars">Cars</Link>
+          </li>
+          <li>
+            <Link href="/movies">Movies</Link>
+          </li>
+          <li>
+            <Link href="/cocktails">Cocktails</Link>
+          </li>
         </ul>
       </nav>
     </header>
