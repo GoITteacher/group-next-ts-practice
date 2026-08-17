@@ -1,24 +1,26 @@
-import Songs from "@/components/Songs/Songs";
-import css from "./Page.module.css";
 import {
   dehydrate,
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { getSongs } from "@/services/songs";
+import css from "./page.module.css";
+import { getMovies } from "@/services/movies";
+import MoviesClient from "@/components/MoviesClient/MoviesClient";
 
 const Page = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["title", ""],
-    queryFn: () => getSongs({ title: "" }),
+    queryKey: ["movies", ""],
+    queryFn: () => getMovies({ title: "" }),
   });
 
   return (
     <div className={css["page"]}>
+      <h1>Movies</h1>
+
       <HydrationBoundary state={dehydrate(queryClient)}>
-        <Songs />
+        <MoviesClient />
       </HydrationBoundary>
     </div>
   );

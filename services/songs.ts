@@ -5,6 +5,7 @@ interface GetSongsParams {
   page?: number;
   perPage?: number;
   artist?: string;
+  title?: string;
 }
 
 export const getSongs = async (params: GetSongsParams) => {

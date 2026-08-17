@@ -1,8 +1,10 @@
 import { serverApi } from "@/types/serverApi";
-import { GetMoviesResponse, Movie } from "@/types/movies";
+import { GetMoviesParams, GetMoviesResponse, Movie } from "@/types/movies";
 
-export const getMovies = async () => {
-  const res = await serverApi.get<GetMoviesResponse>("/public/movies");
+export const getMovies = async (params: GetMoviesParams) => {
+  const res = await serverApi.get<GetMoviesResponse>("/public/movies", {
+    params,
+  });
   return res.data;
 };
 

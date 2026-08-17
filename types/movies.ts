@@ -19,3 +19,14 @@ export interface GetMoviesResponse {
   hasPreviousPage: boolean;
   items: Movie[];
 }
+
+export interface GetMoviesParams {
+  title?: string;
+  director?: string;
+  genre?: string;
+  releaseYear?: number;
+  rating?: number;
+  durationMinutes?: number;
+  language?: string;
+  summary?: string;
+}
