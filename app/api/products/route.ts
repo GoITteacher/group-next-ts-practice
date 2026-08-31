@@ -9,6 +9,8 @@ export const GET = async (req: NextRequest) => {
 
 export const POST = async (req: NextRequest) => {
   const body = await req.json();
-  const res = await globalServer.post("/public/products", body);
+
+  const res = await globalServer.post("/products", body);
+
   return NextResponse.json(res.data);
 };

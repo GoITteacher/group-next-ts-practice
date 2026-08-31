@@ -22,4 +22,6 @@ export const PATCH = async (req: NextRequest, { params }: RequestParams) => {
 
 export const DELETE = async (req: NextRequest, { params }: RequestParams) => {
   const { id } = await params;
+  const res = await globalServer.delete(`/todos/${id}`);
+  return NextResponse.json(res.data);
 };

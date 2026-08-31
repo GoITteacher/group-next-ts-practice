@@ -7,6 +7,14 @@ interface ProductsResponse {
 
 export const GET = async (req: NextRequest, { params }: ProductsResponse) => {
   const { id } = await params;
-  const res = await globalServer.get(`/public/products/${id}`);
+  const res = await globalServer.get(`/products/${id}`);
+  return NextResponse.json(res.data);
+};
+export const DELETE = async (
+  req: NextRequest,
+  { params }: ProductsResponse,
+) => {
+  const { id } = await params;
+  const res = await globalServer.delete(`/products/${id}`);
   return NextResponse.json(res.data);
 };
