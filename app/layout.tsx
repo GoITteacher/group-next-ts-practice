@@ -1,6 +1,8 @@
 "use client";
 import TanStackQueryProvider from "@/components/providers/TanStackQueryProvider";
 import "./globals.css";
+import Header from "@/components/Header/Header";
+import AuthProvider from "@/components/providers/AuthProvider";
 
 export default function RootLayout({
   children,
@@ -10,7 +12,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TanStackQueryProvider>{children}</TanStackQueryProvider>
+        <TanStackQueryProvider>
+          <AuthProvider>
+            <Header />
+            {children}
+          </AuthProvider>
+        </TanStackQueryProvider>
       </body>
     </html>
   );
