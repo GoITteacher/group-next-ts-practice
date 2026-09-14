@@ -3,13 +3,15 @@ import { globalServer } from "../../server-config";
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
-  const cookieStorage = await cookies();
+  try {
+    const cookieStorage = await cookies();
 
-  const res = await globalServer.get("/auth/me", {
-    headers: {
-      Cookie: cookieStorage.toString(),
-    },
-  });
+    const res = await globalServer.get("/auth/me", {
+      headers: {
+        Cookie: cookieStorage.toString(),
+      },
+    });
 
-  return NextResponse.json(res.data);
+    return NextResponse.json(res.data);
+  } catch (err) {}
 };
