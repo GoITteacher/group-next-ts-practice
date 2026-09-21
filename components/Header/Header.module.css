@@ -1,0 +1,90 @@
+.header {
+  width: 100%;
+  min-height: 64px;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header a,
+.header button {
+  padding: 10px 16px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+
+  color: #cbd5e1;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header a:hover,
+.header button:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.header a:active,
+.header button:active {
+  transform: scale(0.96);
+}
+
+.header a:focus-visible,
+.header button:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
+}
+
+/* Main Page залишається зліва,
+   Login / Logout переходять вправо */
+.header a:nth-child(2),
+.header button {
+  margin-left: auto;
+}
+
+.header button {
+  color: #fca5a5;
+}
+
+.header button:hover {
+  color: #ffffff;
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+@media (max-width: 600px) {
+  .header {
+    min-height: 56px;
+    padding: 0 16px;
+  }
+
+  .header a,
+  .header button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

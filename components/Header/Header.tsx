@@ -15,10 +15,13 @@ const Header = () => {
 
   return (
     <div className={css["header"]}>
-      <Link href="/">Main Page</Link>
+      <div>
+        <Link href="/">Main Page</Link>
+        <Link href="/profile">Profile Page</Link>
+        <Link href="/about-us">About Us Page</Link>
+      </div>
 
       {!isAuth && <Link href="/login">Login</Link>}
-
       {isAuth && <button onClick={handleLogoutClick}>Logout</button>}
     </div>
   );
