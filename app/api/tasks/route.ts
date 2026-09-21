@@ -27,3 +27,15 @@ export const POST = async (request: NextRequest) => {
     );
   }
 };
+
+export const GET = async (req: NextRequest) => {
+  const cookie = await cookies();
+  const params = Object.fromEntries(req.nextUrl.searchParams.entries());
+  const res = await globalServer.get("/tasks", {
+    params,
+    headers: {
+      Cookie: cookie.toString(),
+    },
+  });
+  return NextResponse.json(res.data);
+};
