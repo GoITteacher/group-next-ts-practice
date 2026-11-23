@@ -1,12 +1,12 @@
-import TestButton from "@/components/TestButton/TestButton";
+import Form3 from "@/components/Form3/Form3";
 import css from "./Page.module.css";
 
 const Page = () => {
   return (
     <div className={css["page"]}>
-      <h1>Books Page</h1>
+      <h1>Formik</h1>
 
-      <TestButton />
+      <Form3 />
     </div>
   );
 };
